@@ -1,6 +1,7 @@
 # 环境依赖
-使用到的三个依赖：mysql，etcd，redis
-由于本身mac就安装了mysql所以mysql就不从docker启动，本机已经启动，另外的etcd和redis使用docker启动
+使用三个依赖：mysql，etcd，redis
+
+本地已安装mysql，etcd和redis使用docker启动
 
 ## docker start etcd
 ### Step 1:pull image
