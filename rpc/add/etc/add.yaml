@@ -1,0 +1,15 @@
+Name: add.rpc
+ListenOn: 127.0.0.1:8080
+Log:
+  Level: error
+
+Etcd:
+  Hosts:
+  - 127.0.0.1:2398
+  Key: add.rpc
+
+DataSource: root:yourpassword@tcp(localhost:3306)/gozero
+Table: book
+Cache:
+  - Host: localhost:6379
+
