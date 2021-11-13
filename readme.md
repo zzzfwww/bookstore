@@ -1,27 +1,14 @@
 # 环境依赖
+开发运行机器MacBook Pro 
+
 使用三个依赖：mysql，etcd，redis
 
-本地已安装mysql，etcd和redis使用docker启动
+本地已安装mysql，etcd本地安装，redis使用docker启动
 
-## docker start etcd
-### Step 1:pull image
-```shell 
-docker pull bitnami/etcd:latest
-```
-### Step 2: Create a network
-```shell 
-docker network create app-tier --driver bridge
-```
-### Step 3: Launch the etcd server instance
-```shell 
-docker run -d --name etcd-server \
-    --network app-tier \
-    --publish 2379:2379 \
-    --publish 2380:2380 \
-    --env ALLOW_NONE_AUTHENTICATION=yes \
-    --env ETCD_ADVERTISE_CLIENT_URLS=http://etcd-server:2379 \
-    bitnami/etcd:latest
-```
+## install etcd and start
+### ectd info
+[etcd](./etcd.md)
+
 ## docker start redis
 ### Step 1:pull image
 ```shell 
@@ -32,7 +19,8 @@ docker pull redis:latest
 docker run --name redis -p 6379:6379 -d redis
 ```
 
-### benchmark
+
+## benchmark
 ```shell
 wrk -t10 -c1000 -d30s --latency "http://localhost:8888/check\?book\=go-zero"
 ```
