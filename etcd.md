@@ -1,5 +1,21 @@
 ## 安装etcd
 
+### Docker 启动etcd
+第一步：
+``` shell
+docker network create app-tier --driver bridge
+```
+第二步：
+``` shell
+docker run -d --name etcd-server \
+    --network app-tier \
+    --publish 12379:2379 \
+    --publish 12380:2380 \
+    --env ALLOW_NONE_AUTHENTICATION=yes \
+    --env ETCD_ADVERTISE_CLIENT_URLS=http://127.0.0.1:12379 \
+    bitnami/etcd:3.5.1
+``` 
+
 ### 从github官网下载etcd
 
 ```shell
