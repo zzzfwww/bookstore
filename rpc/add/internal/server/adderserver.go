@@ -13,6 +13,7 @@ import (
 
 type AdderServer struct {
 	svcCtx *svc.ServiceContext
+	add.UnimplementedAdderServer
 }
 
 func NewAdderServer(svcCtx *svc.ServiceContext) *AdderServer {

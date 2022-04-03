@@ -13,6 +13,7 @@ import (
 
 type CheckerServer struct {
 	svcCtx *svc.ServiceContext
+	check.UnimplementedCheckerServer
 }
 
 func NewCheckerServer(svcCtx *svc.ServiceContext) *CheckerServer {
