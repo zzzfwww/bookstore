@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/zeromicro/go-zero/core/logx"
 
 	"bookstore/api/internal/config"
 	"bookstore/api/internal/handler"
@@ -14,6 +15,9 @@ import (
 
 var configFile = flag.String("f", "etc/bookstore-api.yaml", "the config file")
 
+func init(){
+	logx.DisableStat()
+}
 func main() {
 	flag.Parse()
 

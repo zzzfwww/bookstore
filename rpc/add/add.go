@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/zeromicro/go-zero/core/logx"
 
 	"bookstore/rpc/add/add"
 	"bookstore/rpc/add/internal/config"
@@ -17,6 +18,10 @@ import (
 )
 
 var configFile = flag.String("f", "etc/add.yaml", "the config file")
+
+func init(){
+	logx.DisableStat()
+}
 
 func main() {
 	flag.Parse()
